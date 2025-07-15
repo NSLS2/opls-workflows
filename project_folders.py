@@ -31,6 +31,8 @@ def create_folders(uid, beamline_acronym='opls'):
             "XRR_analysis/checks_plots",
             "XRR_analysis/summaries",
             "Jupyter_notebooks",
+            "GIWAXS_data",
+            "GIWAXS_analysis",
             # "kibron"  # Uncomment if needed
             # "scan_plots"  # Uncomment if needed
         ]
