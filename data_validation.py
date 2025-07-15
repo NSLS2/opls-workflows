@@ -1,4 +1,3 @@
-import os
 import time as ttime
 
 from prefect import flow, task, get_run_logger
@@ -27,4 +26,4 @@ def read_all_streams(uid, beamline_acronym=BEAMLINE_OR_ENDSTATION):
 
 @flow(log_prints=True)
 def data_validation(uid):
-    read_all_streams(uid, beamline_acronym="opls")
+    read_all_streams(uid, beamline_acronym=BEAMLINE_OR_ENDSTATION)
