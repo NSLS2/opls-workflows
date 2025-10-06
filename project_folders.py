@@ -1,12 +1,12 @@
 
 from prefect import get_run_logger
-from tiled.client import from_profile
 from pathlib import Path
+from utils import get_tiled_client
 
 def create_folders(uid, beamline_acronym='opls'):
     logger = get_run_logger()
-    tiled_client = from_profile("nsls2")
-    run = tiled_client[beamline_acronym]["raw"][uid]
+    tiled_client = get_tiled_client()
+    run = tiled_client["raw"][uid]
     logger.info(f"Creating project folders for {run.start['uid']} if not exist.")
 
     cycle_id, data_session = run.start['cycle'], run.start['data_session']
