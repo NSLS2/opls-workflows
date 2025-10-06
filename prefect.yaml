@@ -23,7 +23,6 @@ deployments:
       job_variables:
         env:
           TILED_SITE_PROFILES: /nsls2/software/etc/tiled/profiles
-          TILED_API_KEY: "{{ prefect.blocks.secret.tiled-opls-api-key }}"
         image: ghcr.io/nsls2/opls-workflows:main
         network: slirp4netns
         volumes:
