@@ -1,11 +1,13 @@
 
 from prefect import get_run_logger
+from prefect.blocks.system import Secret
 from pathlib import Path
-from utils import get_tiled_client
+from tiled.client import from_profile
 
 def create_folders(uid, beamline_acronym='opls'):
     logger = get_run_logger()
-    tiled_client = get_tiled_client()
+    api_key = Secret.load(f"tiled-{beamline_acronym}-api-key", _sync=True).get()
+    tiled_client = from_profile("nsls2", api_key=api_key)[beamline_acronym]
     run = tiled_client["raw"][uid]
     logger.info(f"Creating project folders for {run.start['uid']} if not exist.")
 
