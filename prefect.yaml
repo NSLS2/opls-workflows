@@ -15,6 +15,10 @@ pull:
 deployments:
   - name: opls-end-of-run-workflow-docker
     version: 0.1.0
+    tags:
+      - opls
+      - smi
+      - main
     description: Deploy the updated Docker image
     entrypoint: end_of_run_workflow.py:end_of_run_workflow
     parameters: {}
