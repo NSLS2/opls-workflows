@@ -1,5 +1,5 @@
 name: prefect-docker-pixi-tiled-opls
-prefect-version: 3.6.0
+prefect-version: 3.4.18
 
 build: null
 
@@ -14,7 +14,7 @@ pull:
 
 deployments:
   - name: opls-end-of-run-workflow-docker
-    version: 0.1.0
+    version: 0.1.1
     tags:
       - opls
       - smi
