@@ -11,7 +11,7 @@ BEAMLINE_OR_ENDSTATION = "opls"
 def read_all_streams(uid, beamline_acronym=BEAMLINE_OR_ENDSTATION):
     logger = get_run_logger()
     api_key = Secret.load(f"tiled-{beamline_acronym}-api-key", _sync=True).get()
-    tiled_client = from_profile(beamline_acronym, api_key=api_key)[beamline_acronym]
+    tiled_client = from_profile("nsls2", api_key=api_key)[beamline_acronym]
     run = tiled_client["raw"][uid]
     logger.info(f"Validating uid {run.start['uid']}")
     start_time = ttime.monotonic()
