@@ -5,7 +5,7 @@ from data_validation import get_run
 
 
 @flow
-def create_folders(uid, beamline_acronym='opls', dry_run=False):
+def create_folders(uid, dry_run=False):
     logger = get_run_logger()
     run = get_run(uid)
     logger.info(f"Creating project folders for {run.start['uid']} if not exist.")
