@@ -5,9 +5,9 @@ from data_validation import get_run
 
 
 @flow
-def create_folders(uid, dry_run=False):
+def create_folders(uid, api_key=None, dry_run=False):
     logger = get_run_logger()
-    run = get_run(uid)
+    run = get_run(uid, api_key=api_key)
     logger.info(f"Creating project folders for {run.start['uid']} if not exist.")
 
     cycle_id, data_session = run.start['cycle'], run.start['data_session']
