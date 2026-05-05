@@ -24,7 +24,7 @@ def get_run(uid, api_key=None):
 
 
 @flow
-def data_validation(uid, beamline_acronym=BEAMLINE_OR_ENDSTATION, api_key=None):
+def data_validation(uid, api_key=None):
     logger = get_run_logger()
     run = get_run(uid, api_key=api_key)
     logger.info(f"Validating uid {run.start['uid']}")
