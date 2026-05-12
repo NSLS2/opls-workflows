@@ -30,6 +30,7 @@ deployments:
         network: slirp4netns
         volumes:
           - /nsls2/data/smi/proposals:/nsls2/data/smi/proposals
+          - /srv/prefect3-docker-worker-opls/app:/srv
         container_create_kwargs:
           userns_mode: "keep-id:uid=402959,gid=402959"  # workflow-smi:workflow-smi
         auto_remove: true
