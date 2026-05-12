@@ -9,10 +9,10 @@ def log_completion():
     logger.info("Complete")
 
 @flow(task_runner=ConcurrentTaskRunner())
-def end_of_run_workflow(stop_doc):
+def end_of_run_workflow(stop_doc, api_key=None, dry_run=False):
     logger = get_run_logger()
     uid = stop_doc["run_start"]
-    data_validation(uid)
-    create_folders(uid)
+    data_validation(uid, api_key=api_key)
+    create_folders(uid, api_key=api_key, dry_run=dry_run)
     log_completion()
 
