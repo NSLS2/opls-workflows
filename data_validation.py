@@ -1,6 +1,8 @@
 import time as ttime
 import os
 
+from dotenv import load_dotenv
+
 from prefect import flow, task, get_run_logger
 from tiled.client import from_uri
 
