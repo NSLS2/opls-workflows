@@ -23,6 +23,7 @@ def create_folders(uid, api_key=None, dry_run=False):
             "XRF_analysis",
             "PseudoXRR",
             "PseudoXRR/gixos",
+            "PseudoXRR/gixos2",
             "PseudoXRR/p100kA",
             "PseudoXRR/processed",
             "XRR_analysis/data",
